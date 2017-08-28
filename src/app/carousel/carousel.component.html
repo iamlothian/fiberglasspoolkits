@@ -1,0 +1,9 @@
+<section>
+
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let slide of slides">
+      <img src="/assets/images/1px0pcnt.png" [style.backgroundImage]="'url(' + slide.url +')'" [style.backgroundPosition]="slide.align" alt="{{slide.alt}}"/>
+    </ng-template>
+  </ngb-carousel>
+
+</section>

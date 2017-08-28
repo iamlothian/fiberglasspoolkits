@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+fpk-carousel .carousel-inner {
+  height: 500px;
+}
+.carousel-item {
+  height: 100%;
+  width: 100%;
+}
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.no-gutters .col,
+.no-gutters [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.modal.modal-gallery .modal-dialog {
+  max-width: 80%;
+}
+
+button {
+  cursor: pointer;
+}
