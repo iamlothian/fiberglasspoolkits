@@ -10,7 +10,7 @@ import { KitsFilterComponent } from '../kits-filter/kits-filter.component'
 export class KitsComponent implements OnInit {
 
   kits = [
-    {},{},{},{},{},{}
+    {id:0},{id:1},{id:2},{id:3},{id:4},{id:5}
   ]
 
   constructor() { }
