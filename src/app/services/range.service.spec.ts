@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { KitService } from './kit.service';
+import { ShellRangeService } from './range.service';
 
 describe('KitService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [KitService]
+      providers: [ShellRangeService]
     });
   });
 
-  it('should be created', inject([KitService], (service: KitService) => {
+  it('should be created', inject([ShellRangeService], (service: ShellRangeService) => {
     expect(service).toBeTruthy();
   }));
 });

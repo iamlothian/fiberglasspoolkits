@@ -1,0 +1,46 @@
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top pointer" src="{{ defaultImg.url }}" alt="defaultImg.title" (click)="openGallery()">
+  <div class="card-body">
+      <h4 class="card-title">{{ range.title }}</h4>
+    <p class="card-text">
+      {{ range.description }}
+    </p>
+    <hr/>
+    <strong>Supplier:</strong> {{ range.supplier.title }}
+  </div>
+
+  <div class="list-group list-group-flush">
+
+    <button class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-secondary pointer">
+        <span class="">
+          <strong>Shapes</strong>
+          <span class="badge badge-primary badge-pill">{{ range.shells.length }}</span>
+        </span>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </button>
+    <div class="list-group-item">
+      <fpk-thumbnail [asset]="currentShell.assets[0]"></fpk-thumbnail>
+
+      <strong>Width:</strong> {{ currentShell.width/1000 | units:'m' }}<br/>
+      <strong>Length:</strong> {{ currentShell.length/1000 | units:'m' }}<br/>
+      <strong>Depth:</strong> {{ currentShell.depthMin/1000 | units:'m' }} - {{ currentShell.depthMax/1000 | units:'m' }}
+
+    </div>
+
+    <button class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-secondary pointer">
+        <span class="">
+            <strong>Colours</strong>
+            <span class="badge badge-primary badge-pill">{{ range.colours.length }}</span>
+        </span>
+
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </button>
+    <div class="list-group-item">
+      <fpk-thumbnail [asset]="currentColour.assets[0]"></fpk-thumbnail>
+    </div>
+
+  </div>
+  <div class="card-body d-flex justify-content-end">
+    <button type="button" class="btn btn-outline-primary">Select</button>
+  </div>
+</div>

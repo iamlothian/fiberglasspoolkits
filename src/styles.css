@@ -25,9 +25,9 @@ fpk-carousel .carousel-inner {
 }
 
 .modal.modal-gallery .modal-dialog {
-  max-width: 80%;
+  max-width: 60%;
 }
 
-button {
+.pointer {
   cursor: pointer;
 }

@@ -1,0 +1,53 @@
+:host { display: block; }
+article { margin: 5px; }
+
+.img-split-container {
+  position: relative;
+  overflow: hidden;
+}
+.img-split-container img {
+  width:100%;
+  cursor: pointer;
+}
+
+.img-split-container .fa-expand {
+  position: absolute;
+  display: none;
+  top:0;
+  right: 0;
+  margin: 15px;
+}
+.img-split-container:hover .fa-expand {
+  display: block;
+}
+
+.img-split-frame {
+  position: absolute;
+  top:-50%;
+  left: 0;
+  transition: transform 300ms ease-in-out;
+  transform: rotateZ(-30deg) scale(1.2) translate(0%,0%);
+}
+.img-split-frame img {
+  transition: transform 300ms ease-in-out;
+}
+.img-split-frame:hover {
+  transform: rotateZ(0) scale(1) translate(0%,0%);
+}
+
+.img-split-frame:hover img:nth-child(1){
+  transform: rotateZ(0) translate(0, -50%);
+}
+
+.img-split-frame:hover img:nth-child(2){
+  transform: rotateZ(0) translate(0, 50%);
+}
+.img-split-frame img:nth-child(1):hover {
+  transform: rotateZ(0) translate(0, 50%);
+  z-index: 1
+}
+.img-split-frame img:nth-child(2):hover {
+  transform: rotateZ(0) translate(0, -50%);
+}
+
+
