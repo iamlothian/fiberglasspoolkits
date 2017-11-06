@@ -4,6 +4,7 @@ import {NgForm} from '@angular/forms';
 
 import { ShellRange }             from '../models/shell-range'
 import { ShellRangeService }  from '../services/range.service'
+import { NgxCarousel, NgxCarouselStore } from 'ngx-carousel';
 
 import {
   trigger,
@@ -17,6 +18,7 @@ import {
   selector: 'fpk-shell-list',
   templateUrl: './shell-list.component.html',
   styleUrls: ['./shell-list.component.css'],
+  providers: [NgxCarousel],
   animations: [
     trigger('fadeInOut', [
       state('in', style({opacity: 1})),
@@ -33,8 +35,20 @@ export class ShellListComponent implements OnInit {
 
   constructor(
     private rangeService: ShellRangeService,
-    private router: Router
-  ) { }
+    private router: Router,
+    public shellTileConfig: NgxCarousel
+  ) {
+    this.shellTileConfig = {
+      grid: {xs: 1, sm: 2, md: 3, lg: 3, all: 0},
+      slide: 1,
+      speed: 400,
+      point: {
+        visible: true
+      },
+      touch: true,
+      loop: false
+    }
+  }
 
   async ngOnInit() {
     this.ranges = await this.rangeService.get()

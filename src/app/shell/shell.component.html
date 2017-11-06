@@ -15,12 +15,11 @@
 
         <img class="card-img-top pointer" src="{{ defaultImg.url }}" alt="defaultImg.title" (click)="openGallery()">
         <div class="card-body">
-            <h4 class="card-title">{{ range.title }}</h4>
+          <!-- <h4 class="card-title">{{ range.title }}</h4> -->
+          <strong>Supplier:</strong> {{ range.supplier.title }}
           <p class="card-text">
             {{ range.description }}
           </p>
-          <hr/>
-          <strong>Supplier:</strong> {{ range.supplier.title }}
         </div>
 
       </ng-template>
