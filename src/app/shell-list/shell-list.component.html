@@ -34,24 +34,25 @@
       <div class="container">
         <a class="navbar-brand" href="#">Kits / Shells</a>
 
-        <div ngbDropdown class="d-inline-block">
-          <button class="btn btn-outline-light" id="supplier" ngbDropdownToggle>Any Supplier</button>
-          <div ngbDropdownMenu aria-labelledby="supplier">
-            <button class="dropdown-item">Any Supplier</button>
-            <button class="dropdown-item">Another Action</button>
-            <button class="dropdown-item">Something else is here</button>
-          </div>
-        </div>
+        <form class="form-inline" #f="ngForm"  (ngSubmit)="filterShells(f)" novalidate>
 
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-light" id="supplier" ngbDropdownToggle>Any Supplier</button>
+            <div ngbDropdownMenu aria-labelledby="supplier">
+              <button class="dropdown-item">Any Supplier</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
+            </div>
+          </div>
+
+          <input class="form-control mr-sm-2" name="shellSearch" [(ngModel)]="shellSearchText" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
     </nav>
 
     <div class="row equal-height">
-        <div fpk-shell [@fadeInOut]="'in'" [range]="range" *ngFor="let range of ranges" class="col-12 col-md-6 col-lg-4" [class.expanded]="range.expanded"></div>
+        <div fpk-shell [@fadeInOut]="'in'" [range]="range" *ngFor="let range of ranges | shellFilter:'title':shellSearchText" class="col-12 col-md-6 col-lg-4"></div>
     </div>
   </div>
 
@@ -63,7 +64,7 @@
     <hr>
 
     <div class="row">
-      <div class="col">
+      <div class="col-12 col-md-6">
           <ul>
             <li>Handover Kit</li>
             <li>Pool Shell</li>
@@ -77,9 +78,8 @@
             <li>Chlorinator - Salt Water Self Cleaning</li>
           </ul>
       </div>
-      <div class="col">
+      <div class="col-12 col-md-6">
           <ul>
-            <li>Chlorinator - Salt Water Self Cleaning</li>
             <li>supaflex hose 11m or 15m</li>
             <li>Skimmer box, hydro valve, 2 x eyeballs</li>
             <li>therometer, test kit</li>
@@ -93,7 +93,7 @@
       </div>
     </div>
 
-    <h2>Option Extras</h2>
+    <h2>Optional Extras</h2>
     <hr>
     <div class="row">
       <div class="col">
@@ -117,4 +117,14 @@
   </div>
 </section>
 
+<section id="shell-list" class="bg-light">
+  <div class="container pt-3 pb-3">
 
+    <h4>
+      Contact us for a delivery quote
+      <br><small>Phone: 1300 722 009</small>
+      <br><small>Email: sales@realaussiepools.com.au</small>
+    </h4>
+
+  </div>
+</section>

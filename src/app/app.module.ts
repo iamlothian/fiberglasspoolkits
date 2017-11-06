@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxCarouselModule } from 'ngx-carousel';
@@ -31,6 +32,7 @@ import { ShellComponent } from './shell/shell.component';
 import { ShellListComponent } from './shell-list/shell-list.component';
 import { ThumbnailComponent } from './thumbnail/thumbnail.component';
 import { UnitsPipe } from './units.pipe';
+import { ShellFilterPipe } from './shell-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { UnitsPipe } from './units.pipe';
     ShellComponent,
     ShellListComponent,
     ThumbnailComponent,
-    UnitsPipe
+    UnitsPipe,
+    ShellFilterPipe
   ],
   entryComponents: [NgbdModalContent],
   imports: [
@@ -57,6 +60,7 @@ import { UnitsPipe } from './units.pipe';
     NgbModule.forRoot(),
     NgxCarouselModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
+    FormsModule
   ],
   providers: [ShellRangeService, ModalGalleryService],
   bootstrap: [AppComponent]

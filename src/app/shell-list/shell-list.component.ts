@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
+import {NgForm} from '@angular/forms';
 
 import { ShellRange }             from '../models/shell-range'
 import { ShellRangeService }  from '../services/range.service'
@@ -28,6 +29,8 @@ export class ShellListComponent implements OnInit {
 
   ranges:Array<ShellRange> = []
 
+  shellSearchText:string
+
   constructor(
     private rangeService: ShellRangeService,
     private router: Router
@@ -37,5 +40,8 @@ export class ShellListComponent implements OnInit {
     this.ranges = await this.rangeService.get()
   }
 
+  filterShells(f: NgForm) {
+    console.log(f.value)
+  }
 
 }

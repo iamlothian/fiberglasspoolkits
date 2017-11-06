@@ -1,15 +1,32 @@
 <div class="card">
-  <img class="card-img-top pointer" src="{{ defaultImg.url }}" alt="defaultImg.title" (click)="openGallery()">
-  <div class="card-body">
-      <h4 class="card-title">{{ range.title }}</h4>
-    <p class="card-text">
-      {{ range.description }}
-    </p>
-    <hr/>
-    <strong>Supplier:</strong> {{ range.supplier.title }}
-  </div>
 
-  <ngb-accordion #acc="ngbAccordion" activeIds="">
+  <ngb-accordion #acc="ngbAccordion" activeIds="range" [closeOthers]="true">
+    <ngb-panel id="range">
+
+      <ng-template ngbPanelTitle>
+        <span class="d-flex justify-content-between align-items-center">
+          <span class="">
+            <strong>{{ range.title }}</strong>
+          </span>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+
+        <img class="card-img-top pointer" src="{{ defaultImg.url }}" alt="defaultImg.title" (click)="openGallery()">
+        <div class="card-body">
+            <h4 class="card-title">{{ range.title }}</h4>
+          <p class="card-text">
+            {{ range.description }}
+          </p>
+          <hr/>
+          <strong>Supplier:</strong> {{ range.supplier.title }}
+        </div>
+
+      </ng-template>
+
+    </ngb-panel>
+
     <ngb-panel id="shapes">
 
       <ng-template ngbPanelTitle>
