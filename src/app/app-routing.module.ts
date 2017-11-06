@@ -1,13 +1,16 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { KitsComponent } from './kits/kits.component'
+import { ShellListComponent } from './shell-list/shell-list.component'
+// import { KitsComponent } from './kits/kits.component'
+// import { MyKitsComponent } from './my-kits/my-kits.component'
+// import { EditKitComponent } from './edit-kit/edit-kit.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/kits', pathMatch: 'full' },
-  { path: 'kits',  component: KitsComponent },
-  //{ path: 'detail/:id', component: HeroDetailComponent },
-  //{ path: 'heroes',     component: HeroesComponent }
+  { path: '', redirectTo: '/shells', pathMatch: 'full' },
+  { path: 'shells',  component: ShellListComponent },
+  //{ path: 'mykits', component:MyKitsComponent },
+  //{ path: 'mykits/:id/edit', component:EditKitComponent },
 ];
 
 @NgModule({

@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 
 export class Slide {
-  url:String;
-  alt:String;
-
-  constructor(url:String,alt:String) {
-    this.url = url;
-    this.alt = alt;
-  }
+  constructor(
+    public url:String,
+    public alt:String,
+    public caption:String = undefined
+  ) {}
 }
 
 @Injectable()

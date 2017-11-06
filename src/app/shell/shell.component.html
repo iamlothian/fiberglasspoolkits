@@ -1,0 +1,110 @@
+<div class="card">
+
+  <ngb-accordion #acc="ngbAccordion" activeIds="range" [closeOthers]="true">
+    <ngb-panel id="range">
+
+      <ng-template ngbPanelTitle>
+        <span class="d-flex justify-content-between align-items-center">
+          <span class="">
+            <strong>{{ range.title }}</strong>
+          </span>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+
+        <img class="card-img-top pointer" src="{{ defaultImg.url }}" alt="defaultImg.title" (click)="openGallery()">
+        <div class="card-body">
+          <!-- <h4 class="card-title">{{ range.title }}</h4> -->
+          <strong>Supplier:</strong> {{ range.supplier.title }}
+          <p class="card-text">
+            {{ range.description }}
+          </p>
+        </div>
+
+      </ng-template>
+
+    </ngb-panel>
+
+    <ngb-panel id="shapes">
+
+      <ng-template ngbPanelTitle>
+        <span class="d-flex justify-content-between align-items-center">
+          <span class="">
+            <strong>Shapes</strong>
+            <span class="badge badge-primary badge-pill">{{ range.shells.length }}</span>
+          </span>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </span>
+      </ng-template>
+
+      <ng-template ngbPanelContent>
+
+        <ngx-carousel [inputs]="config" [moveToSlide]="selectedShell" (onMove)="onShellChange($event)" class="shell-select">
+          <ngx-item NgxCarouselItem *ngFor="let shell of range.shells; let i = index">
+
+            <div class="card bg-light mb-3" [class.active]="i===selectedShell">
+              <img class="card-img-top" src="{{ shell.assets[0].url }}" alt="{{shell.assets[0].title}}">
+              <div class="card-body">
+                <strong>Width:</strong> {{ shell.width/1000 | units:'m' }}<br/>
+                <strong>Length:</strong> {{ shell.length/1000 | units:'m' }}<br/>
+                <strong>Depth:</strong> {{ shell.depthMin/1000 | units:'m' }} - {{ shell.depthMax/1000 | units:'m' }}
+              </div>
+            </div>
+          </ngx-item>
+
+          <button NgxCarouselPrev><i class="fa fa-chevron-left pointer" aria-hidden="true"></i></button>
+          <button NgxCarouselNext><i class="fa fa-chevron-right pointer" aria-hidden="true"></i></button>
+        </ngx-carousel>
+
+        <hr>
+        <small>Note: Pool sizes represent internal measurements</small>
+
+      </ng-template>
+
+    </ngb-panel>
+
+    <ngb-panel id="colours">
+
+      <ng-template ngbPanelTitle>
+        <span class="d-flex justify-content-between align-items-center">
+          <span class="">
+            <strong>Colours</strong>
+            <span class="badge badge-primary badge-pill">{{ range.colours.length }}</span>
+          </span>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </span>
+      </ng-template>
+
+      <ng-template ngbPanelContent>
+
+          <ngx-carousel [inputs]="config" [moveToSlide]="selectedColour" (onMove)="onColourChange($event)" class="colour-select">
+            <ngx-item NgxCarouselItem *ngFor="let colour of range.colours; let i = index">
+
+              <div class="card bg-light mb-3" [class.active]="i===selectedColour">
+                <div class="card-body">
+                  <fpk-thumbnail [asset]="colour.assets[0]"></fpk-thumbnail>
+                </div>
+              </div>
+            </ngx-item>
+
+            <button NgxCarouselPrev><i class="fa fa-chevron-left pointer" aria-hidden="true"></i></button>
+            <button NgxCarouselNext><i class="fa fa-chevron-right pointer" aria-hidden="true"></i></button>
+          </ngx-carousel>
+
+          <hr>
+          <small>Kit prices include all colours</small>
+
+      </ng-template>
+
+    </ngb-panel>
+  </ngb-accordion>
+
+  <div class="card-body">
+      <span class="h4">Kit Price: {{ 18000 | currency:'AUD':'symbol-narrow':'4.2-2'}}</span>
+  </div>
+
+  <div class="card-footer d-flex justify-content-start">
+    <button type="button" class="btn btn-success">Select</button>
+  </div>
+</div>

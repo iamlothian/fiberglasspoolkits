@@ -1,0 +1,144 @@
+
+<section id="about-us">
+  <div class="container pt-3 pb-3">
+    <h2>About Us</h2>
+    <hr>
+    <p>Lorem ipsum dolor sit amet, vix ei quot mnesarchum, at eam fugit ceteros convenire, pertinax indoctum at sea. Affert mediocritatem mei cu, has ei vidit constituto deterruisset. An qui postea necessitatibus. Laudem doctus ne eam, in audiam vivendo platonem vis.</p>
+    <p>Sit aeque persius et. Vidisse appetere cu eum, an qui tritani mediocritatem. Ex nam vituperata incorrupte. At nec harum imperdiet, nec volumus iracundia et. Eu quo laudem nostro, ut possit voluptatum vix.</p>
+    <p>Te quo oblique posidonium honestatis. Cu elaboraret disputationi concludaturque mei, ius an contentiones disputationi, eum scripta atomorum an. Saperet offendit platonem nam ut, an eam purto soluta qualisque. Mel ne zril persius, expetenda voluptatibus in vim, debet solet ius ex. Cum an aeque bonorum expetenda. Postea singulis abhorreant vel no, pro cu meis assueverit.</p>
+    <p>Dolorum salutatus reformidans usu at. Solum facilisi repudiandae ut qui, ne per suscipit praesent forensibus. Dicit fuisset signiferumque ex vis, an sed suavitate necessitatibus. Ad pri equidem ponderum, convenire urbanitas efficiendi mei ea. Pro an eirmod noluisse, te sale maluisset prodesset cum.</p>
+    <p>Cum ei alterum luptatum adipiscing, mel hinc gubergren democritum in. Te erat habeo dolor ius, nam eros tollit laboramus ne. Te nec suas erant simul. Ne pri summo decore temporibus. Mollis appellantur duo et, in vim dolor verterem. Sit ut adhuc consul graeco, at nec sint dictas suscipit, alienum aliquando gloriatur eu sea.</p>
+
+  </div>
+</section>
+
+<section id="the-kit-advantage">
+  <div class="container pt-3 pb-3">
+
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">RAP Kit Advantage</h4>
+      <hr>
+      <p class="lead"><strong>RAP pool kit prices include a choice of all colours AND your skimmer box, eyeballs and safety suctions are preinstalled for you</strong></p>
+    </div>
+
+  </div>
+</section>
+
+<section id="shell-list" class="bg-light">
+  <div class="container pt-3 pb-3">
+
+    <h2>Choose your Shell</h2>
+    <hr>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">Kits / Shells</a>
+
+        <form class="form-inline" #f="ngForm"  (ngSubmit)="filterShells(f)" novalidate>
+
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-light" id="supplier" ngbDropdownToggle>Any Supplier</button>
+            <div ngbDropdownMenu aria-labelledby="supplier">
+              <button class="dropdown-item">Any Supplier</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
+            </div>
+          </div>
+
+          <input class="form-control mr-sm-2" name="shellSearch" [(ngModel)]="shellSearchText" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- <ngx-carousel [inputs]="shellTileConfig">
+
+        <ngx-tile NgxCarouselItem *ngFor="let range of ranges | shellFilter:'title':shellSearchText; index as i">
+            <div fpk-shell [@fadeInOut]="'in'" [range]="range"></div>
+        </ngx-tile>
+
+        <button NgxCarouselPrev class='leftRs'>&lt;</button>
+        <button NgxCarouselNext class='rightRs'>&gt;</button>
+    </ngx-carousel> -->
+
+    <div class="row equal-height">
+
+        <div fpk-shell [@fadeInOut]="'in'" [range]="range" *ngFor="let range of ranges | shellFilter:'title':shellSearchText" class="col-12 col-md-6 col-lg-4"></div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+<section id="the-kit">
+  <div class="container pt-3 pb-3">
+    <h2>Pool Kit Inclusions</h2>
+    <hr>
+
+    <div class="row">
+      <div class="col-12 col-md-6">
+          <ul>
+            <li>Handover Kit</li>
+            <li>Pool Shell</li>
+            <li>Flexi vacuum head</li>
+            <li>Colours - cultured range included</li>
+            <li>deep bag skimmer</li>
+            <li>Filter - Davey (Cartridge)</li>
+            <li>professional wall brush</li>
+            <li>Pump - Davey Tyhpoon</li>
+            <li>telepole 2.4 to 4.8m</li>
+            <li>Chlorinator - Salt Water Self Cleaning</li>
+          </ul>
+      </div>
+      <div class="col-12 col-md-6">
+          <ul>
+            <li>supaflex hose 11m or 15m</li>
+            <li>Skimmer box, hydro valve, 2 x eyeballs</li>
+            <li>therometer, test kit</li>
+            <li>Solar Provision (Shell Fittings)</li>
+            <li>2 x Safety suction and 1 x eyeball</li>
+            <li>(Pump, Filter & Chlorinators size determined by pool size)</li>
+            <li>Engineer drawings</li>
+            <li>Dig Plan</li>
+            <li>Installation instructions</li>
+          </ul>
+      </div>
+    </div>
+
+    <h2>Optional Extras</h2>
+    <hr>
+    <div class="row">
+      <div class="col">
+          <ul>
+            <li>PH Feeder added to Chlorinator</li>
+            <li>Bioniser (Chemical free/Mineral)</li>
+            <li>Underwater Lights</li>
+            <li>Auto Cleaner</li>
+            <li>Pool Blanket</li>
+            <li>Pool Blanket Roller</li>
+            <li>Hand Rails</li>
+            <li>Solar heating kit</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+    <div class="alert alert-warning" role="alert">
+        Delivery on all pool kits is extra
+    </div>
+  </div>
+</section>
+
+<section id="shell-list" class="bg-light">
+  <div class="container pt-3 pb-3">
+
+    <h4>
+      Contact us for a delivery quote
+      <br><small>Phone: 1300 722 009</small>
+      <br><small>Email: sales@realaussiepools.com.au</small>
+    </h4>
+
+  </div>
+</section>

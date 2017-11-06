@@ -1,39 +1,68 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgModule } from '@angular/core';
+import { HttpClientModule }    from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxCarouselModule } from 'ngx-carousel';
+import 'hammerjs';
+
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { KitsComponent } from './kits/kits.component';
+// pages
+import { ModalGalleryService } from './modal-gallery.service';
+import { MyKitsComponent } from './my-kits/my-kits.component';
+import { EditKitComponent } from './edit-kit/edit-kit.component';
+// sub components
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { KitsFilterComponent } from './kits-filter/kits-filter.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { KitComponent } from './kit/kit.component';
 import { ModalGalleryComponent, NgbdModalContent } from './modal-gallery/modal-gallery.component';
 
-import { ModalGalleryService } from './modal-gallery.service';
+
+import { ShellRangeService } from './services/range.service';
+import { ShellComponent } from './shell/shell.component';
+import { ShellListComponent } from './shell-list/shell-list.component';
+import { ThumbnailComponent } from './thumbnail/thumbnail.component';
+import { UnitsPipe } from './units.pipe';
+import { ShellFilterPipe } from './shell-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    KitsComponent,
     HeaderComponent,
     FooterComponent,
-    KitsFilterComponent,
     CarouselComponent,
     KitComponent,
     NgbdModalContent,
-    ModalGalleryComponent
+    ModalGalleryComponent,
+    MyKitsComponent,
+    EditKitComponent,
+    ShellComponent,
+    ShellListComponent,
+    ThumbnailComponent,
+    UnitsPipe,
+    ShellFilterPipe
   ],
   entryComponents: [NgbdModalContent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    HttpClientModule,
+    NgbModule.forRoot(),
+    NgxCarouselModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    FormsModule
   ],
-  providers: [ModalGalleryService],
+  providers: [ShellRangeService, ModalGalleryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,12 @@
 <section>
 
-  <ngb-carousel>
-    <ng-template ngbSlide *ngFor="let slide of slides">
-      <img src="/assets/images/1px0pcnt.png" [style.backgroundImage]="'url(' + slide.url +')'" [style.backgroundPosition]="slide.align" alt="{{slide.alt}}"/>
-    </ng-template>
-  </ngb-carousel>
+  <ngx-carousel [inputs]="config" [moveToSlide]="0">
+    <ngx-item NgxCarouselItem *ngFor="let slide of slides">
+        <img class="banner-slide" src="/assets/images/1px0pcnt.png" [style.backgroundImage]="'url(' + slide.url +')'" [style.backgroundPosition]="slide.align" alt="{{slide.alt}}"/>
+    </ngx-item>
+
+    <button NgxCarouselPrev><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+    <button NgxCarouselNext><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+  </ngx-carousel>
 
 </section>

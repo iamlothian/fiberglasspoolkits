@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import {ModalGalleryService, Slide} from '../modal-gallery.service'
 
@@ -8,6 +8,8 @@ import {ModalGalleryService, Slide} from '../modal-gallery.service'
   styleUrls: ['./kit.component.css']
 })
 export class KitComponent implements OnInit {
+
+  @Input() kitid;
 
   constructor(private modalGalleryService:ModalGalleryService) {}
 
