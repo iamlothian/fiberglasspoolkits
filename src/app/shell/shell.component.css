@@ -1,53 +1,34 @@
-:host { display: block; }
-article { margin: 5px; }
-
-.img-split-container {
-  position: relative;
-  overflow: hidden;
-}
-.img-split-container img {
-  width:100%;
-  cursor: pointer;
+.card {
+  margin-bottom: 25px;
 }
 
-.img-split-container .fa-expand {
+ngx-item img {
+  pointer-events: none
+}
+ngx-item .card {
   position: absolute;
-  display: none;
-  top:0;
-  right: 0;
-  margin: 15px;
+  width: 100%;
 }
-.img-split-container:hover .fa-expand {
-  display: block;
+ngx-item .card.active{
+  position: static;
 }
 
-.img-split-frame {
+ngx-carousel.colour-select  button,
+ngx-carousel.shell-select  button {
+  border: none;
   position: absolute;
-  top:-50%;
-  left: 0;
-  transition: transform 300ms ease-in-out;
-  transform: rotateZ(-30deg) scale(1.2) translate(0%,0%);
-}
-.img-split-frame img {
-  transition: transform 300ms ease-in-out;
-}
-.img-split-frame:hover {
-  transform: rotateZ(0) scale(1) translate(0%,0%);
+  margin: auto;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
 }
 
-.img-split-frame:hover img:nth-child(1){
-  transform: rotateZ(0) translate(0, -50%);
+ngx-carousel.colour-select  button[NgxCarouselPrev],
+ngx-carousel.shell-select  button[NgxCarouselPrev] {
+  left: 5%;
 }
-
-.img-split-frame:hover img:nth-child(2){
-  transform: rotateZ(0) translate(0, 50%);
+ngx-carousel.colour-select  button[NgxCarouselNext],
+ngx-carousel.shell-select  button[NgxCarouselNext] {
+  right: 5%;
 }
-.img-split-frame img:nth-child(1):hover {
-  transform: rotateZ(0) translate(0, 50%);
-  z-index: 1
-}
-.img-split-frame img:nth-child(2):hover {
-  transform: rotateZ(0) translate(0, -50%);
-}
-
-

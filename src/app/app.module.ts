@@ -1,8 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpModule }    from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgModule } from '@angular/core';
+import { HttpClientModule }    from '@angular/common/http';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxCarouselModule } from 'ngx-carousel';
+import 'hammerjs';
+
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -46,9 +51,11 @@ import { UnitsPipe } from './units.pipe';
   entryComponents: [NgbdModalContent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpModule,
+    HttpClientModule,
     NgbModule.forRoot(),
+    NgxCarouselModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
   ],
   providers: [ShellRangeService, ModalGalleryService],
