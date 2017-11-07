@@ -51,21 +51,22 @@
       </div>
     </nav>
 
-    <!-- <ngx-carousel [inputs]="shellTileConfig">
+    <ngx-carousel [inputs]="shellTileConfig" id="shell-list-carousel">
 
         <ngx-tile NgxCarouselItem *ngFor="let range of ranges | shellFilter:'title':shellSearchText; index as i">
             <div fpk-shell [@fadeInOut]="'in'" [range]="range"></div>
         </ngx-tile>
 
-        <button NgxCarouselPrev class='leftRs'>&lt;</button>
-        <button NgxCarouselNext class='rightRs'>&gt;</button>
-    </ngx-carousel> -->
+        <button NgxCarouselPrev class='leftRs d-none d-lg-block d-xl-block'>&lt;</button>
+        <button NgxCarouselNext class='rightRs d-none d-lg-block d-xl-block'>&gt;</button>
 
-    <div class="row equal-height">
+    </ngx-carousel>
+
+    <!-- <div class="row equal-height">
 
         <div fpk-shell [@fadeInOut]="'in'" [range]="range" *ngFor="let range of ranges | shellFilter:'title':shellSearchText" class="col-12 col-md-6 col-lg-4"></div>
 
-    </div>
+    </div> -->
 
 
   </div>
