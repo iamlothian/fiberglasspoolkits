@@ -6,8 +6,8 @@ export enum ASSET_TYPE {
 }
 
 export class Asset extends Entity {
-  type:ASSET_TYPE
-  width:number
-  height:number
-  url:string
+  type:ASSET_TYPE = ASSET_TYPE.IMAGE
+  width:number    = 0
+  height:number   = 0
+  url:string      = ""
 }

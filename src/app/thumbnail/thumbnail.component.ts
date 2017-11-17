@@ -9,10 +9,18 @@ import { Asset } from '../models'
 export class ThumbnailComponent implements OnInit {
 
   @Input() asset:Asset
+  @Input() title:string
+  @Input() description:string
+  @Input() alt:string
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    // grab defaults from asset if not set by inputs
+    this.title = this.title ? this.title : this.asset.title
+    this.description = this.description ? this.description : this.asset.description
+    this.alt = this.title +' '+ this.description
   }
 
 }

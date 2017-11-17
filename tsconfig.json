@@ -14,22 +14,6 @@
     "lib": [
       "es2017",
       "dom"
-    ],
-    "paths": {
-      "@angular/*": [
-        "../node_modules/@angular/*"
-      ],
-      "rxjs/*": [
-        "../node_modules/rxjs/*"
-      ],
-      "hammerjs": [
-        "../node_modules/hammerjs/hammer.min.js"
-      ]
-    }
-  },
-  "files": [
-    "./src/main.ts",
-    "./src/polyfills.ts",
-    "C:/Users/Matthew/Documents/Projects/ngx-carousel/index.ts"
-  ]
+    ]
+  }
 }

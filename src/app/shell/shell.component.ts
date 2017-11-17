@@ -52,9 +52,9 @@ export class ShellComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.defaultImg = this.range.assets[this.range.defaultAssetId]
-    this.selectedShell = this.range.defaultShell
-    this.selectedColour = this.range.defaultColour
+    this.selectedShell = this.range.defaultShell || 0
+    this.selectedColour = this.range.defaultColour || 0
+    this.defaultImg = this.range.assets[this.range.defaultAssetId || 0]
     this.slides = this.range.assets.map(a=> new Slide(a.url, a.description))
 
     this.config = {
