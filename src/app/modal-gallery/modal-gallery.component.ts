@@ -3,7 +3,7 @@ import {Component, Input} from '@angular/core';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { NgxCarousel, NgxCarouselStore } from 'ngx-carousel';
 
-import {ModalGalleryService, Slide} from '../modal-gallery.service'
+import {ModalGalleryService, Slide} from '../services/modal-gallery.service'
 
 @Component({
   selector: 'ngbd-modal-content',

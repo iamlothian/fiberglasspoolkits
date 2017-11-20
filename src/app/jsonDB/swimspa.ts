@@ -11,6 +11,7 @@ export const swimspa = {
   ] as Array<Asset>,
   shells: [
     {
+      cost: 9600,
       title: 'Swim Spa', description: 'Swim Spa',
       length:5000, width:3300, depthMin:1300, depthMax:null,
       assets: [{url:'./assets/images/shells/RAP/SwimSpaShell.png'} as Asset] as Array<Asset>

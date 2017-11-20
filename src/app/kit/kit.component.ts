@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import {ModalGalleryService, Slide} from '../modal-gallery.service'
+import {ModalGalleryService, Slide} from '../services/modal-gallery.service'
 
 @Component({
   selector: 'fpk-kit',

@@ -16,7 +16,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 // pages
-import { ModalGalleryService } from './modal-gallery.service';
+import { ModalGalleryService } from './services/modal-gallery.service';
 import { MyKitsComponent } from './my-kits/my-kits.component';
 import { EditKitComponent } from './edit-kit/edit-kit.component';
 // sub components
@@ -33,6 +33,8 @@ import { ShellListComponent } from './shell-list/shell-list.component';
 import { ThumbnailComponent } from './thumbnail/thumbnail.component';
 import { UnitsPipe } from './units.pipe';
 import { ShellFilterPipe } from './shell-filter.pipe';
+
+import { NouisliderModule } from 'ng2-nouislider';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,8 @@ import { ShellFilterPipe } from './shell-filter.pipe';
     NgbModule.forRoot(),
     NgxCarouselModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    FormsModule
+    FormsModule,
+    NouisliderModule
   ],
   providers: [ShellRangeService, ModalGalleryService],
   bootstrap: [AppComponent]

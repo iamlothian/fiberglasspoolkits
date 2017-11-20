@@ -46,9 +46,9 @@
             <div class="card bg-light mb-3" [class.active]="i===selectedShell">
               <img class="card-img-top" src="{{ shell.assets[0].url }}" alt="{{shell.assets[0].title}}">
               <div class="card-body">
-                <strong>Width:</strong> {{ shell.width/1000 | units:'m' }}<br/>
                 <strong>Length:</strong> {{ shell.length/1000 | units:'m' }}<br/>
-                <strong>Depth:</strong> {{ shell.depthMin/1000 | units:'m' }} - {{ shell.depthMax/1000 | units:'m' }}
+                <strong>Width:</strong> {{ shell.width/1000 | units:'m' }}<br/>
+                <strong>Depth:</strong> {{ shell.depthMin/1000 | units:'m' }}<span *ngIf="!!shell.depthMax">&nbsp;-&nbsp;{{ shell.depthMax/1000 | units:'m' }}</span>
               </div>
             </div>
           </ngx-item>
@@ -101,7 +101,7 @@
   </ngb-accordion>
 
   <div class="card-body">
-      <span class="h4">Kit Price: {{ 18000 | currency:'AUD':'symbol-narrow':'4.2-2'}}</span>
+      <span class="h4">Prices start at: {{ currentShell.cost + currentColour.cost | currency:'AUD':'symbol-narrow':'4.2-2'}}</span>
   </div>
 
   <div class="card-footer d-flex justify-content-start">

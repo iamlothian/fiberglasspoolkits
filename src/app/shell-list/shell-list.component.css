@@ -33,3 +33,7 @@ ngx-carousel#shell-list-carousel  button[NgxCarouselNext] {
 .card {
   flex: 1;
 }
+
+#filterLength + .dropdown-menu {
+  width: 300px
+}

@@ -34,14 +34,22 @@
       <div class="container">
         <a class="navbar-brand" href="#">Kits / Shells</a>
 
-        <form class="form-inline" #f="ngForm"  (ngSubmit)="filterShells(f)" novalidate>
+        <form class="form-inline" #f="ngForm" (ngSubmit)="filterShells(f)" novalidate>
 
-          <div ngbDropdown class="d-inline-block">
-            <button class="btn btn-outline-light" id="supplier" ngbDropdownToggle>Any Supplier</button>
+          <div ngbDropdown class="d-inline-block mr-sm-2" placement="bottom-left">
+            <button class="btn btn-outline-light" type="button" id="filterLength" ngbDropdownToggle>Length</button>
+            <div ngbDropdownMenu aria-labelledby="shell length range" class="dropdown-menu px-4 pt-5">
+
+                <nouislider [config]="rangeConfig" [min]="minLength" [max]="maxLength" name="lengthRange" [(ngModel)]="lengthRange"></nouislider>
+
+            </div>
+          </div>
+
+          <div ngbDropdown class="d-inline-block mr-sm-2">
+            <button class="btn btn-outline-light" type="button" id="filterSupplier" ngbDropdownToggle>{{ !!supplier ? supplier.title : 'Any Supplier' }}</button>
             <div ngbDropdownMenu aria-labelledby="supplier">
-              <button class="dropdown-item">Any Supplier</button>
-              <button class="dropdown-item">Another Action</button>
-              <button class="dropdown-item">Something else is here</button>
+              <button class="dropdown-item" type="button" (click)="selectSupplier()">Any Supplier</button>
+              <button class="dropdown-item" type="button" (click)="selectSupplier(supplier)" *ngFor="let supplier of suppliers">{{ supplier.title }}</button>
             </div>
           </div>
 
@@ -51,14 +59,18 @@
       </div>
     </nav>
 
-    <ngx-carousel [inputs]="shellTileConfig" id="shell-list-carousel">
+    <ngx-carousel [inputs]="shellTileConfig" [moveToSlide]="currentRange" id="shell-list-carousel">
 
-        <ngx-tile NgxCarouselItem *ngFor="let range of ranges | shellFilter:'title':shellSearchText; index as i">
+        <ngx-tile NgxCarouselItem *ngFor="let range of filteredRanges; index as i">
             <div fpk-shell [@fadeInOut]="'in'" [range]="range"></div>
         </ngx-tile>
 
-        <button NgxCarouselPrev class='leftRs d-none d-lg-block d-xl-block'>&lt;</button>
-        <button NgxCarouselNext class='rightRs d-none d-lg-block d-xl-block'>&gt;</button>
+        <button NgxCarouselPrev class='leftRs d-none d-lg-block d-xl-block'>
+          <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button NgxCarouselNext class='rightRs d-none d-lg-block d-xl-block'>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </button>
 
     </ngx-carousel>
 

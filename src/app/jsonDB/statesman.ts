@@ -12,16 +12,19 @@ export const statesman = {
   ] as Array<Asset>,
   shells: [
     {
+      cost: 11100,
       title: 'Statesman 6', description: 'Statesman 6',
       length:6000, width:3500, depthMin:1120, depthMax:1610,
       assets: [{url:'./assets/images/shells/RAP/Statesman6shell.png'} as Asset] as Array<Asset>
     } as Shell,
     {
+      cost: 12150,
       title: 'Statesman 7', description: 'Statesman 7',
       length:7000, width:4000, depthMin:1120, depthMax:1710,
       assets: [{url:'./assets/images/shells/RAP/Statesman7shell.png'} as Asset] as Array<Asset>
     } as Shell,
     {
+      cost: 13100,
       title: 'Statesman 8', description: 'Statesman 8',
       length:8000, width:4000, depthMin:1120, depthMax:1800,
       assets: [{url:'./assets/images/shells/RAP/Statesman8Shell.png'} as Asset] as Array<Asset>
