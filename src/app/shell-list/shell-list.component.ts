@@ -10,9 +10,8 @@ import { NouiFormatter } from 'ng2-nouislider'
 
 export class unitsFormatter implements NouiFormatter {
   to(value: number): string {
-    return (value / 1000).toFixed(1) + 'm'
+    return (value / 1000).toFixed(2) + 'm'
   }
-
   from(value: string): number {
     return Number.parseFloat(value.replace('m','')) * 1000
   }
@@ -75,7 +74,7 @@ export class ShellListComponent implements OnInit {
   rangeConfig: any = {
     behaviour: 'drag',
     connect: true,
-    step: 100,
+    step: 50,
     range: { min: 0, max: Number.MAX_SAFE_INTEGER},
     // pageSteps: 100,  // number of page steps, defaults to 10
     // pips: {
@@ -113,33 +112,53 @@ export class ShellListComponent implements OnInit {
       if(this.suppliers.findIndex(s => s.entityId === r.supplier.entityId) < 0) { this.suppliers.push(r.supplier) }
 
       let maxShellLength = r.shells.reduce((m,s) => m >= s.length ? m : s.length, 0)
-      if(this.maxLength < maxShellLength) { this.maxLength = maxShellLength }
+      if(this.maxLength <= maxShellLength) { this.maxLength = maxShellLength }
 
       let minShellLength = r.shells.reduce((m,s) => m >= s.length ? s.length : m,  Number.MAX_SAFE_INTEGER)
-      if(this.minLength > minShellLength) { this.minLength = minShellLength }
+      if(this.minLength >= minShellLength) { this.minLength = minShellLength }
 
       let maxShellWidth = r.shells.reduce((m,s) => m >= s.width ? m : s.width, 0)
-      if(this.maxWidth < maxShellWidth) { this.maxWidth = maxShellWidth }
+      if(this.maxWidth <= maxShellWidth) { this.maxWidth = maxShellWidth }
 
       let minShellWidth = r.shells.reduce((m,s) => m >= s.width ? s.width : m, Number.MAX_SAFE_INTEGER)
-      if(this.minWidth > minShellWidth) { this.minWidth = minShellWidth }
+      if(this.minWidth >= minShellWidth) { this.minWidth = minShellWidth }
 
       let maxShellDepth = r.shells.reduce((m,s) => m >= (s.depthMax || s.depthMin) ? m : (s.depthMax || s.depthMin), 0)
-      if(this.maxDepth < maxShellDepth) { this.maxDepth = maxShellDepth }
+      if(this.maxDepth <= maxShellDepth) { this.maxDepth = maxShellDepth }
 
       let minShellDepth = r.shells.reduce((m,s) => m >= s.depthMin ? s.depthMin : m, Number.MAX_SAFE_INTEGER)
-      if(this.minDepth > minShellDepth) { this.minDepth = minShellDepth }
+      if(this.minDepth >= minShellDepth) { this.minDepth = minShellDepth }
 
     })
 
   }
 
+  trackByFn(index, item: ShellRange) {
+    return item['id'] || item.title; // or item.id
+  }
+
   filterShells(f: NgForm) {
-    debugger
-    this.filteredRanges = this.allRanges
-      .filter(r => !!this.shellSearchText ? r.title.toLowerCase().indexOf(this.shellSearchText) !== -1 : r)
-      .filter(r => !!this.supplier ? r.supplier.entityId === this.supplier.entityId : r)
-      //.map(r => { r.shells = r.shells.filter((s,i)=>i===0); return r });
+
+    this.filteredRanges = []
+
+    this.allRanges.forEach(r => {
+
+      var shells = r.shells
+      .filter(s => s.length >= this.lengthRange[0] && s.length <= this.lengthRange[1])
+      .filter(s => s.width >= this.widthRange[0] && s.width <= this.widthRange[1])
+      .filter(s => s.depthMin >= this.depthRange[0] && (s.depthMax || s.depthMin) <= this.depthRange[1])
+
+      if (
+        shells.length > 0 &&
+        (!this.supplier || !!this.supplier && r.supplier.entityId === this.supplier.entityId) &&
+        (!this.shellSearchText || !!this.shellSearchText && r.title.toLowerCase().indexOf(this.shellSearchText.toLowerCase()) !== -1)
+      ){
+        var range = Object.assign({}, r)
+        range.shells = shells
+        this.filteredRanges.push(range)
+      }
+
+    })
 
     this.currentRange = -1
   }

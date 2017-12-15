@@ -3,7 +3,7 @@ import { RAP } from './suppliers'
 import { colours } from './colours'
 
 export const swimspa = {
-  title: 'Swim Spa',
+  title: 'RAP Swim Spa',
   description: 'Swim Spa is a pool',
   supplier: RAP,
   assets: [

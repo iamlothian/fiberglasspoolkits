@@ -39,9 +39,21 @@
           <div ngbDropdown class="d-inline-block mr-sm-2" placement="bottom-left">
             <button class="btn btn-outline-light" type="button" id="filterLength" ngbDropdownToggle>Length</button>
             <div ngbDropdownMenu aria-labelledby="shell length range" class="dropdown-menu px-4 pt-5">
-
                 <nouislider [config]="rangeConfig" [min]="minLength" [max]="maxLength" name="lengthRange" [(ngModel)]="lengthRange"></nouislider>
+            </div>
+          </div>
 
+          <div ngbDropdown class="d-inline-block mr-sm-2" placement="bottom-left">
+            <button class="btn btn-outline-light" type="button" id="filterWidth" ngbDropdownToggle>Width</button>
+            <div ngbDropdownMenu aria-labelledby="shell length range" class="dropdown-menu px-4 pt-5">
+                <nouislider [config]="rangeConfig" [min]="minWidth" [max]="maxWidth" name="widthRange" [(ngModel)]="widthRange"></nouislider>
+            </div>
+          </div>
+
+          <div ngbDropdown class="d-inline-block mr-sm-2" placement="bottom-left">
+            <button class="btn btn-outline-light" type="button" id="filterDepth" ngbDropdownToggle>Depth</button>
+            <div ngbDropdownMenu aria-labelledby="shell length range" class="dropdown-menu px-4 pt-5">
+                <nouislider [config]="rangeConfig" [min]="minDepth" [max]="maxDepth" name="depthRange" [(ngModel)]="depthRange"></nouislider>
             </div>
           </div>
 
@@ -61,7 +73,7 @@
 
     <ngx-carousel [inputs]="shellTileConfig" [moveToSlide]="currentRange" id="shell-list-carousel">
 
-        <ngx-tile NgxCarouselItem *ngFor="let range of filteredRanges; index as i">
+        <ngx-tile NgxCarouselItem *ngFor="let range of filteredRanges; index as i; trackBy:trackByFn">
             <div fpk-shell [@fadeInOut]="'in'" [range]="range"></div>
         </ngx-tile>
 
@@ -93,29 +105,28 @@
     <div class="row">
       <div class="col-12 col-md-6">
           <ul>
-            <li>Handover Kit</li>
             <li>Pool Shell</li>
-            <li>Flexi vacuum head</li>
-            <li>Colours - cultured range included</li>
-            <li>deep bag skimmer</li>
-            <li>Filter - Davey (Cartridge)</li>
-            <li>professional wall brush</li>
-            <li>Pump - Davey Tyhpoon</li>
-            <li>telepole 2.4 to 4.8m</li>
+            <li>Colours - check shell range for colour options</li>
             <li>Chlorinator - Salt Water Self Cleaning</li>
+            <li>Filter - Davey (Cartridge)</li>
+            <li>Pump - Davey Tyhpoon</li>
+            <li>(Pump, Filter & Chlorinators size determined by pool size)</li>
+            <li>Skimmer box, hydro valve, 2 x eyeballs</li>
+            <li>Solar Provision (Shell Fittings) 2 x Safety suction and 1 x eyeball</li>
+            <li>Engineer drawings</li>
+            <li>Excavation Plan</li>
+            <li>Installation instructions</li>
           </ul>
       </div>
       <div class="col-12 col-md-6">
           <ul>
+            <li>Handover Kit including the following:</li>
+            <li>deep bag skimmer</li>
+            <li>professional wall brush</li>
+            <li>telepole 2.4 to 4.8m</li>
             <li>supaflex hose 11m or 15m</li>
-            <li>Skimmer box, hydro valve, 2 x eyeballs</li>
+            <li>Flexi vacuum head</li>
             <li>therometer, test kit</li>
-            <li>Solar Provision (Shell Fittings)</li>
-            <li>2 x Safety suction and 1 x eyeball</li>
-            <li>(Pump, Filter & Chlorinators size determined by pool size)</li>
-            <li>Engineer drawings</li>
-            <li>Dig Plan</li>
-            <li>Installation instructions</li>
           </ul>
       </div>
     </div>
@@ -129,10 +140,10 @@
             <li>Bioniser (Chemical free/Mineral)</li>
             <li>Underwater Lights</li>
             <li>Auto Cleaner</li>
-            <li>Pool Blanket</li>
-            <li>Pool Blanket Roller</li>
+            <li>Pool Cover</li>
+            <li>Pool Cover Roller</li>
             <li>Hand Rails</li>
-            <li>Solar heating kit</li>
+            <li>Aussie Hide Away & Aussie UnderCover</li>
         </ul>
       </div>
     </div>

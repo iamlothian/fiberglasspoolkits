@@ -12,13 +12,13 @@ export const courtyard = {
   shells: [
     {
       cost:9350,
-      title: 'Courtyard 3', description: 'Courtyard 4',
+      title: 'Courtyard', description: 'Courtyard',
       length:3000, width:1900, depthMin:1290, depthMax:1475,
       assets: [{url:'./assets/images/shells/Courtyard/Courtyard.png'} as Asset] as Array<Asset>
     } as Shell,
     {
       cost:9750,
-      title: 'Courtyard 4', description: 'Courtyard 4',
+      title: 'Courtyard', description: 'Courtyard',
       length:4000, width:1900, depthMin:1290, depthMax:1600,
       assets: [{url:'./assets/images/shells/Courtyard/Courtyard.png'} as Asset] as Array<Asset>
     } as Shell

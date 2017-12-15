@@ -15,79 +15,90 @@ export const colours = [
   } as Item,
   {
     entityId: "2",
-    cost: 0,
+    cost: 400,
     title:'Daintree', description:'',
     assets: [{url:'./assets/images/shells/colours/DAINTREE1.jpg'}] as Array<Asset>
   } as Item,
   {
     entityId: "3",
-    cost: 0,
+    cost: 400,
     title:'Sand', description:'',
     assets: [{url:'./assets/images/shells/colours/SAND1.png'}] as Array<Asset>
   } as Item,
   {
     entityId: "4",
-    cost: 0,
+    cost: 60,
+    perMeterSqr: true,
     title:'Bermuda', description:'',
     assets: [{url:'./assets/images/shells/colours/BERMUDA1.jpg'}] as Array<Asset>
   } as Item,
   {
     entityId: "5",
-    cost: 0,
+    cost: 60,
+    perMeterSqr: true,
     title:'Mid Blue', description:'',
     assets: [{url:'./assets/images/shells/colours/MID-BLUE1.jpg'}] as Array<Asset>
   } as Item,
   {
     entityId: "6",
-    cost: 0,
+    cost: 60,
+    perMeterSqr: true,
     title:'Coral Blue', description:'',
     assets: [{url:'./assets/images/shells/colours/CORAL-BLUE1.jpg'}] as Array<Asset>
   } as Item,
   {
     entityId: "7",
-    cost: 0,
+    cost: 60,
+    perMeterSqr: true,
     title:'Aqua Jade', description:'',
     assets: [{url:'./assets/images/shells/colours/AQUA-JADE1.jpg'}] as Array<Asset>
   } as Item,
   {
     entityId: "8",
-    cost: 0,
+    cost: 60,
+    perMeterSqr: true,
     title:'Ivory Sand', description:'',
     assets: [{url:'./assets/images/shells/colours/IVORY-SAND1.jpg'}] as Array<Asset>
   } as Item,
   {
     entityId: "9",
-    cost: 0,
+    cost: 60,
+    perMeterSqr: true,
     title:'Grey Granite', description:'',
     assets: [{url:'./assets/images/shells/colours/GreyGraniteNEW.jpg'}] as Array<Asset>
   } as Item,
   {
     entityId: "10",
-    cost: 0,
+    cost: 80,
+    perMeterSqr: true,
     title:'Starlight Sapphire', description:'',
     assets: [{url:'./assets/images/shells/colours/SAPPHIRE21.jpg'}] as Array<Asset>
   } as Item,
   {
     entityId: "11",
-    cost: 0,
+    cost: 80,
+    perMeterSqr: true,
     title:'Starlight Lagoon', description:'',
     assets: [{url:'./assets/images/shells/colours/LAGOON21.jpg'}] as Array<Asset>
   } as Item,
   {
     entityId: "12",
-    cost: 0,
+    cost: 80,
+    perMeterSqr: true,
     title:'Starlight Blue Grey', description:'',
     assets: [{url:'./assets/images/shells/colours/BLUE-GREY1.jpg'}] as Array<Asset>
   } as Item,
   {
     entityId: "13",
-    cost: 0,
+    cost: 80,
+    perMeterSqr: true,
     title:'Starlight Daintree', description:'',
     assets: [{url:'./assets/images/shells/colours/DAINTREE21.png'}] as Array<Asset>
   } as Item,
   {
     entityId: "14",
-    cost: 0,
+    cost: 80,
+    perMeterSqr: true,
     title:'Starlight Pebble', description:'',
     assets: [{url:'./assets/images/shells/colours/PEBBLE1.jpg'}] as Array<Asset>
   } as Item,

@@ -52,6 +52,10 @@ export class ShellComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.range.shells = this.range.shells.sort((a,b) => a.cost - b.cost);
+    this.range.colours = this.range.colours.sort((a,b) => a.cost - b.cost);
+
     this.selectedShell = this.range.defaultShell || 0
     this.selectedColour = this.range.defaultColour || 0
     this.defaultImg = this.range.assets[this.range.defaultAssetId || 0]
