@@ -1,11 +1,11 @@
 import { ShellRange, Entity, Asset, Shell, Item } from '../models'
-import { RAP } from './suppliers'
+import { Stronglass } from './suppliers'
 import { colours } from './colours'
 
 export const swimspa = {
-  title: 'RAP Swim Spa',
+  title: 'Modern Swim Spa',
   description: 'Swim Spa is a pool',
-  supplier: RAP,
+  supplier: Stronglass,
   assets: [
     {url:'./assets/images/shells/RAP/SwimSpaShell.png'} as Asset
   ] as Array<Asset>,

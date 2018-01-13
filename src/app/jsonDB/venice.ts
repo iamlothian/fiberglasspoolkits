@@ -19,7 +19,7 @@ export const venice = {
     {
       cost:12700,
       title: 'Venice 8', description: 'Venice',
-      length:8000, width:42603000, depthMin:1176, depthMax:1655,
+      length:8000, width:4260, depthMin:1176, depthMax:1655,
       assets: [{url:'./assets/images/shells/Harvest/venice2.png'} as Asset] as Array<Asset>
     } as Shell,
     {

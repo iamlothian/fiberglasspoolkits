@@ -1,11 +1,11 @@
 import { ShellRange, Entity, Asset, Shell, Item } from '../models'
-import { RAP } from './suppliers'
+import { Stronglass } from './suppliers'
 import { colours } from './colours'
 
 export const matilda = {
   title: 'Matilda',
   description: 'Matilda is a pool',
-  supplier: RAP,
+  supplier: Stronglass,
   assets: [
     {url:'./assets/images/shells/RAP/Matilda.jpg'} as Asset,
     {url:'./assets/images/shells/RAP/Matilda2.jpg'} as Asset,

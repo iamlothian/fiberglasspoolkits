@@ -13,8 +13,7 @@ export class CarouselComponent implements OnInit {
 
   slides = [
     {url:'./assets/images/feature/1.jpg', align:'center', alt:'first slide'},
-    {url:'./assets/images/feature/2.jpg', align:'center', alt:'second slide'},
-    {url:'./assets/images/feature/3.jpg', align:'center', alt:'Third slide'}
+    {url:'./assets/images/feature/2.jpg', align:'center', alt:'second slide'}
   ]
 
   constructor(

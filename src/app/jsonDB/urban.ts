@@ -11,13 +11,13 @@ export const urban = {
   ] as Array<Asset>,
   shells: [
     {
-      cost:22850,
+      cost:11850,
       title: 'Urban 8', description: 'Urban',
       length:8000, width:3000, depthMin:1301, depthMax:1727,
       assets: [{url:'./assets/images/shells/Harvest/urban1.png'} as Asset] as Array<Asset>
     } as Shell,
     {
-      cost:22250,
+      cost:11150,
       title: 'Urban 7', description: 'Urban',
       length:7000, width:3000, depthMin:1301, depthMax:1661,
       assets: [{url:'./assets/images/shells/Harvest/urban2.png'} as Asset] as Array<Asset>

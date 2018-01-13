@@ -3,7 +3,7 @@ import { Harvest } from './suppliers'
 import { colours } from './colours'
 
 export const lappool = {
-  title: 'Lap Pool',
+  title: 'Harvest Lap Pool',
   description: 'Lap Pool is a pool',
   supplier: Harvest,
   assets: [

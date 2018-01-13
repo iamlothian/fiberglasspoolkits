@@ -1,11 +1,11 @@
 import { ShellRange, Entity, Asset, Shell, Item } from '../models'
-import { RAP } from './suppliers'
+import { Stronglass } from './suppliers'
 import { colours } from './colours'
 
 export const patio = {
   title: 'Patio',
   description: 'Patio is a pool',
-  supplier: RAP,
+  supplier: Stronglass,
   assets: [
     {url:'./assets/images/shells/RAP/Patio_pic.jpg'} as Asset
   ] as Array<Asset>,

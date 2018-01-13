@@ -1,16 +1,16 @@
 import { ShellRange, Entity, Asset, Shell, Item } from '../models'
 
-export const RAP = {
+export const Stronglass = {
   entityId: "0",
-  title: 'Real Aussie Pools',
+  title: 'Stronglass',
 } as Entity
 
 export const Harvest = {
   entityId: "1",
-  title: 'Harvest',
+  title: 'Harvest Pools',
 } as Entity
 
 export const Courtyard = {
   entityId: "2",
-  title: 'Courtyard',
+  title: 'Modern Pool Manufacturing',
 } as Entity

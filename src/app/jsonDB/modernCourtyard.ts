@@ -2,8 +2,8 @@ import { ShellRange, Entity, Asset, Shell, Item } from '../models'
 import { Courtyard } from './suppliers'
 import { colours } from './colours'
 
-export const courtyard = {
-  title: 'Courtyard',
+export const modernCourtyard = {
+  title: 'Modern Courtyard',
   description: 'Courtyard is a pool',
   supplier: Courtyard,
   assets: [
