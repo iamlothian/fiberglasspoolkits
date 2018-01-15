@@ -9,6 +9,7 @@
 
 # dependencies
 /node_modules
+/node_modules.delete
 
 # IDEs and editors
 /.idea
