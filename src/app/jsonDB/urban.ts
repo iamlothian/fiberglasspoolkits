@@ -3,7 +3,7 @@ import { Harvest } from './suppliers'
 import { colours } from './colours'
 
 export const urban = {
-  title: 'Urban',
+  title: 'Harvest Urban',
   description: 'Urban is a pool',
   supplier: Harvest,
   assets: [

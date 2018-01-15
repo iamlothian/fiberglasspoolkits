@@ -7,7 +7,7 @@ export const harvestSquareSpa = {
   description: 'Swim Spa is a pool',
   supplier: Harvest,
   assets: [
-    {url:'./assets/images/shells/Harvest/spas1.png'} as Asset
+    {url:'./assets/images/shells/Harvest/SQU_SPA.jpg'} as Asset
   ] as Array<Asset>,
   shells: [
     {

@@ -3,7 +3,7 @@ import { Stronglass } from './suppliers'
 import { colours } from './colours'
 
 export const statesman = {
-  title: 'Statesman',
+  title: 'Stronglass Statesman',
   description: 'Statesman is a pool',
   supplier: Stronglass,
   assets: [

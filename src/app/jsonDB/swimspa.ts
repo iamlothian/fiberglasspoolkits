@@ -3,7 +3,7 @@ import { Stronglass } from './suppliers'
 import { colours } from './colours'
 
 export const swimspa = {
-  title: 'Modern Swim Spa',
+  title: 'Stroglass Swim Spa',
   description: 'Swim Spa is a pool',
   supplier: Stronglass,
   assets: [

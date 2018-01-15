@@ -3,7 +3,7 @@ import { Stronglass } from './suppliers'
 import { colours } from './colours'
 
 export const patio = {
-  title: 'Patio',
+  title: 'Stronglass Patio',
   description: 'Patio is a pool',
   supplier: Stronglass,
   assets: [
