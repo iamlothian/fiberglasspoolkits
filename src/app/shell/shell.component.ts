@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {ModalGalleryService, Slide} from '../services/modal-gallery.service'
+import { ModalGalleryService, Slide} from '../services/modal-gallery.service'
 import { ShellRange, Shell, Asset, Item, Entity } from '../models'
 import { NgxCarousel, NgxCarouselStore } from 'ngx-carousel';
 

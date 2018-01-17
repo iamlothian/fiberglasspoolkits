@@ -11,7 +11,7 @@ export class Slide {
 @Injectable()
 export class ModalGalleryService {
 
-  openFunction:Function;
+  private openFunction:Function;
 
   constructor() { }
 

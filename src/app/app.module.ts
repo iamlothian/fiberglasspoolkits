@@ -26,7 +26,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { KitComponent } from './kit/kit.component';
 import { ModalGalleryComponent, NgbdModalContent } from './modal-gallery/modal-gallery.component';
 
-
+import { ShellListFilterService } from './services/shell-list-filter.service';
 import { ShellRangeService } from './services/range.service';
 import { ShellComponent } from './shell/shell.component';
 import { ShellListComponent } from './shell-list/shell-list.component';
@@ -35,6 +35,8 @@ import { UnitsPipe } from './units.pipe';
 import { ShellFilterPipe } from './shell-filter.pipe';
 
 import { NouisliderModule } from 'ng2-nouislider';
+import { HomeComponent } from './home/home.component';
+import { ShellListFilterComponent } from './shell-list-filter/shell-list-filter.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { NouisliderModule } from 'ng2-nouislider';
     ShellListComponent,
     ThumbnailComponent,
     UnitsPipe,
-    ShellFilterPipe
+    ShellFilterPipe,
+    HomeComponent,
+    ShellListFilterComponent
   ],
   entryComponents: [NgbdModalContent],
   imports: [
@@ -65,7 +69,7 @@ import { NouisliderModule } from 'ng2-nouislider';
     FormsModule,
     NouisliderModule
   ],
-  providers: [ShellRangeService, ModalGalleryService],
+  providers: [ShellRangeService, ModalGalleryService, ShellListFilterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

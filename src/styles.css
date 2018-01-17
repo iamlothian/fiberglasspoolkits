@@ -44,3 +44,7 @@ fpk-carousel .ngxcarouselPoint li {
 .pointer {
   cursor: pointer;
 }
+
+.noUi-connect {
+  background-color: grey;
+}

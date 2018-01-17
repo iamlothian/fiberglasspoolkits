@@ -1,0 +1,66 @@
+
+<form class="form" #f="ngForm" (ngSubmit)="filterShells(f)" novalidate>
+
+  <div class="row">
+      <div class="col-md-6 col-lg-6">
+        <div class="form-group">
+          <label>Base Shell Cost ($)</label>
+          <nouislider class="mx-3 mb-5" [config]="costRangeConfig" [min]="shells.minCost" [max]="shells.maxCost" name="costRange" [(ngModel)]="costRange"></nouislider>
+          <small>Based only on the cost of the shell; excluding colour choice or other extras.</small>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-6">
+        <div class="form-group">
+          <label>Shell Depth (m)</label>
+          <nouislider class="mx-3 mb-5" [config]="rangeConfig" [min]="shells.minDepth" [max]="shells.maxDepth" name="depthRange" [(ngModel)]="depthRange"></nouislider>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-6">
+      <div class="form-group">
+        <label>Shell Length (m)</label>
+        <nouislider class="mx-3 mb-5" [config]="rangeConfig" [min]="shells.minLength" [max]="shells.maxLength" name="lengthRange" [(ngModel)]="lengthRange"></nouislider>
+      </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-6">
+      <div class="form-group">
+        <label>Shell Width (m)</label>
+        <nouislider class="mx-3 mb-5" [config]="rangeConfig" [min]="shells.minWidth" [max]="shells.maxWidth" name="widthRange" [(ngModel)]="widthRange"></nouislider>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-md-3 col-lg-3 pb-3">
+
+      <div ngbDropdown>
+        <button class="btn btn-outline w-100" type="button" id="filterSupplier" ngbDropdownToggle>{{ !!supplier ? supplier.title : 'Any Supplier' }}</button>
+        <div ngbDropdownMenu aria-labelledby="supplier">
+          <button class="dropdown-item" type="button" (click)="selectSupplier()">Any Supplier</button>
+          <button class="dropdown-item" type="button" (click)="selectSupplier(supplier)" *ngFor="let supplier of shells.suppliers">{{ supplier.title }}</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-5 col-lg-6 pb-3">
+        <input class="form-control mr-sm-2" name="shellSearch" [(ngModel)]="shellSearchText" type="search" placeholder="Search for shells by name" aria-label="Search">
+    </div>
+    <div class="col-md-4 col-lg-3 pb-3">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-outline my-2 my-sm-0 w-100" (click)="resetFilter()">Reset</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline my-2 my-sm-0 w-100 btn-primary" type="submit">Filter</button>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+</form>

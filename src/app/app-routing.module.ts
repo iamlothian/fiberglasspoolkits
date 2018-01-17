@@ -1,14 +1,14 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ShellListComponent } from './shell-list/shell-list.component'
+import { HomeComponent } from './home/home.component'
 // import { KitsComponent } from './kits/kits.component'
 // import { MyKitsComponent } from './my-kits/my-kits.component'
 // import { EditKitComponent } from './edit-kit/edit-kit.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/shells', pathMatch: 'full' },
-  { path: 'shells',  component: ShellListComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home',  component: HomeComponent },
   //{ path: 'mykits', component:MyKitsComponent },
   //{ path: 'mykits/:id/edit', component:EditKitComponent },
 ];
