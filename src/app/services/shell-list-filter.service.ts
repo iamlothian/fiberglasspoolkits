@@ -101,6 +101,7 @@ export class ShellListFilterService {
     this._allRanges.forEach(r => {
 
       var shells = r.shells
+      .filter(s => s.cost >= costRange[0] && s.cost <= costRange[1])
       .filter(s => s.length >= lengthRange[0] && s.length <= lengthRange[1])
       .filter(s => s.width >= widthRange[0] && s.width <= widthRange[1])
       .filter(s => s.depthMin >= depthRange[0] && (s.depthMax || s.depthMin) <= depthRange[1])

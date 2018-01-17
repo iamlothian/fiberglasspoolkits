@@ -4,7 +4,7 @@
   <div class="row">
       <div class="col-md-6 col-lg-6">
         <div class="form-group">
-          <label>Base Shell Cost ($)</label>
+          <label><b>Base Shell Cost ($)</b>: {{costRange[0] | currency:'AUD':'symbol-narrow':'2.2-2'}} - {{costRange[1] | currency:'AUD':'symbol-narrow':'2.2-2'}}</label>
           <nouislider class="mx-3 mb-5" [config]="costRangeConfig" [min]="shells.minCost" [max]="shells.maxCost" name="costRange" [(ngModel)]="costRange"></nouislider>
           <small>Based only on the cost of the shell; excluding colour choice or other extras.</small>
         </div>
@@ -12,7 +12,7 @@
 
       <div class="col-md-6 col-lg-6">
         <div class="form-group">
-          <label>Shell Depth (m)</label>
+          <label><b>Shell Depth (m)</b>: {{depthRange[0]/1000 | units:'m'}} - {{depthRange[1]/1000 | units:'m'}}</label>
           <nouislider class="mx-3 mb-5" [config]="rangeConfig" [min]="shells.minDepth" [max]="shells.maxDepth" name="depthRange" [(ngModel)]="depthRange"></nouislider>
         </div>
       </div>
@@ -21,7 +21,7 @@
   <div class="row">
     <div class="col-md-6 col-lg-6">
       <div class="form-group">
-        <label>Shell Length (m)</label>
+        <label><b>Shell Length (m)</b>: {{lengthRange[0]/1000 | units:'m'}} - {{lengthRange[1]/1000 | units:'m'}}</label>
         <nouislider class="mx-3 mb-5" [config]="rangeConfig" [min]="shells.minLength" [max]="shells.maxLength" name="lengthRange" [(ngModel)]="lengthRange"></nouislider>
       </div>
     </div>
@@ -29,7 +29,7 @@
 
     <div class="col-md-6 col-lg-6">
       <div class="form-group">
-        <label>Shell Width (m)</label>
+        <label><b>Shell Width (m)</b>: {{widthRange[0]/1000 | units:'m'}} - {{widthRange[1]/1000 | units:'m'}}</label>
         <nouislider class="mx-3 mb-5" [config]="rangeConfig" [min]="shells.minWidth" [max]="shells.maxWidth" name="widthRange" [(ngModel)]="widthRange"></nouislider>
       </div>
     </div>

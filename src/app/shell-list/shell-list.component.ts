@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router }            from '@angular/router';
 
 import { ShellRange, Entity, Shell }      from '../models'
@@ -12,7 +12,6 @@ import {
   animate,
   transition
 } from '@angular/animations';
-//import { debug } from 'util';
 
 @Component({
   selector: 'fpk-shell-list',
@@ -28,6 +27,12 @@ import {
   ]
 })
 export class ShellListComponent implements OnInit {
+
+  @Input()
+  type:"carousel"|"grid"
+
+  @Input()
+  showFavorites:boolean
 
   currentRange:number = 0
 

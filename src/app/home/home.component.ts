@@ -9,9 +9,16 @@ import { ShellListFilterComponent } from '../shell-list-filter/shell-list-filter
 })
 export class HomeComponent implements OnInit {
 
+  showFavorites:boolean = false;
+  listType:"carousel"|"grid" = "carousel"
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setListType(type:"carousel"|"grid") {
+    this.listType = type
   }
 
 }

@@ -6,7 +6,7 @@
     <p>
       At Real Aussie Pools our DIY pool kit range offers an extensive variety of pool designs that will
       suit all backyards and budgets. We take pride in providing our customers with a great choice at
-      affordable costs across our range of quality fibreglass swimming pools.  
+      affordable costs across our range of quality fibreglass swimming pools.
       We specalise in fibreglass pools only, including:
     </p>
     <ul>
@@ -69,14 +69,26 @@
     <h2>Choose your Shell</h2>
     <hr>
 
-    <fpk-shell-list></fpk-shell-list>
+    <div class="row">
+      <div class="col d-flex justify-content-start">
+          <button class="btn btn-outline-warning" [class.active]="showFavorites" type="button" (click)="showFavorites = !showFavorites">
+              <i aria-hidden="true" class="fa fa-star"></i>
+              Favourites
+          </button>
+      </div>
+      <div class="col d-flex justify-content-end">
+          <button class="btn btn-outline-secondary" [class.active]="listType == 'grid'" type="button" (click)="setListType('grid')">
+            <i aria-hidden="true" class="fa fa-th"></i>
+            grid
+          </button>
+          <button class="btn btn-outline-secondary" [class.active]="listType == 'carousel'" type="button" (click)="setListType('carousel')">
+            <i aria-hidden="true" class="fa fa-sign-out"></i>
+            carousel
+          </button>
+      </div>
+    </div>
 
-    <!-- <div class="row equal-height">
-
-        <div fpk-shell [@fadeInOut]="'in'" [range]="range" *ngFor="let range of ranges | shellFilter:'title':shellSearchText" class="col-12 col-md-6 col-lg-4"></div>
-
-    </div> -->
-
+    <fpk-shell-list [type]="listType" [showFavorites]="showFavorites"></fpk-shell-list>
 
   </div>
 
