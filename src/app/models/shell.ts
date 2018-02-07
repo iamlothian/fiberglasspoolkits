@@ -10,4 +10,6 @@ export class Shell extends Item {
   depthMax:number         = 0
   defaultAssetId:number   = 0
   bluePrintAssetId:number = 0
+  //UI Props
+  isFavorite:boolean      = false
 }

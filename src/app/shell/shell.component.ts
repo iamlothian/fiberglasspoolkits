@@ -51,6 +51,18 @@ export class ShellComponent implements OnInit {
     this.selectedColour = data.currentSlide;
   }
 
+  get currentTotalCost(): number {
+    let shell = this.currentShell,
+        colour = this.currentColour;
+    return shell.cost + (colour.perLinMtr ? colour.cost * (shell.length/1000) : colour.cost);
+  }
+
+  get currentColourCost(): number {
+    let shell = this.currentShell,
+        colour = this.currentColour;
+    return colour.perLinMtr ? colour.cost * (shell.length/1000) : colour.cost;
+  }
+
   ngOnInit() {
 
     this.range.shells = this.range.shells.sort((a,b) => a.cost - b.cost);

@@ -94,7 +94,7 @@
 
           <hr>
           <small *ngIf="currentColour.cost === 0">Included in kit price</small>
-          <small *ngIf="currentColour.cost > 0">+ {{ currentColour.cost | currency:'AUD':'symbol-narrow':'2.2-2'}}</small>
+          <small *ngIf="currentColour.cost > 0">+ {{ currentColourCost | currency:'AUD':'symbol-narrow':'2.2-2'}} </small>
 
       </ng-template>
 
@@ -102,10 +102,13 @@
   </ngb-accordion>
 
   <div class="card-body">
-      <span class="h4">Prices start at: {{ currentShell.cost + currentColour.cost | currency:'AUD':'symbol-narrow':'4.2-2'}}</span>
+      <span class="h4">Prices start at: {{ currentTotalCost | currency:'AUD':'symbol-narrow':'4.2-2'}}</span>
   </div>
 
-  <!-- <div class="card-footer d-flex justify-content-start">
-    <button type="button" class="btn btn-success">Select</button>
-  </div> -->
+  <div class="card-footer d-flex justify-content-start">
+    <button type="button" class="btn btn-outline-warning" [class.active]="range.isFavorite" (click)="range.isFavorite = !range.isFavorite">
+      <i aria-hidden="true" class="fa fa-plus"></i>
+      Add to favorites
+    </button>
+  </div>
 </div>

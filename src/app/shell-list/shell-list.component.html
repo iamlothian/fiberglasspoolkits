@@ -1,8 +1,8 @@
 <div [ngSwitch]="type">
-    <div *ngSwitchCase="'carousel'">
+    <div *ngSwitchCase="'carousel'" [@fadeInOut]="'in'">
         <ngx-carousel [inputs]="shellTileConfig" [moveToSlide]="currentRange" id="shell-list-carousel">
 
-          <ngx-tile NgxCarouselItem *ngFor="let range of rangeService.filteredRanges; index as i; trackBy:trackByFn">
+          <ngx-tile NgxCarouselItem *ngFor="let range of ranges; index as i; trackBy:trackByFn">
               <div fpk-shell [@fadeInOut]="'in'" [range]="range"></div>
           </ngx-tile>
 
@@ -16,9 +16,9 @@
         </ngx-carousel>
     </div>
 
-    <div *ngSwitchCase="'grid'">
+    <div *ngSwitchCase="'grid'" [@fadeInOut]="'in'">
         <div class="row equal-height mt-2">
-            <div [@fadeInOut]="'in'" *ngFor="let range of rangeService.filteredRanges; index as i; trackBy:trackByFn" class="col-12 col-md-6 col-lg-4 pb-4">
+            <div [@fadeInOut]="'in'" *ngFor="let range of ranges; index as i; trackBy:trackByFn" class="col-12 col-md-6 col-lg-4 pb-4">
               <div fpk-shell [range]="range" class="tile-shadow">
 
               </div>

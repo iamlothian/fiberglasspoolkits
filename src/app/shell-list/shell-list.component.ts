@@ -12,6 +12,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { Range } from '@angular/core/src/profile/wtf_impl';
 
 @Component({
   selector: 'fpk-shell-list',
@@ -37,8 +38,7 @@ export class ShellListComponent implements OnInit {
   currentRange:number = 0
 
   constructor(
-    public rangeService: ShellListFilterService,
-    private router: Router,
+    private rangeService: ShellListFilterService,
     public shellTileConfig: NgxCarousel
   ) {
     this.shellTileConfig = {
@@ -53,12 +53,21 @@ export class ShellListComponent implements OnInit {
     }
   }
 
+  get ranges(): Array<ShellRange> {
+    if (this.showFavorites){
+      return this.rangeService.getFavorites;
+    }
+    else{
+      return this.rangeService.filteredRanges;
+    }
+  }
+
   async ngOnInit() {
     //this.rangeService.filteredRanges;
   }
 
   trackByFn(index, item: ShellRange) {
-    return item['id'] || item.title; // or item.id
+    return item.entityId || item.title;
   }
 
 }

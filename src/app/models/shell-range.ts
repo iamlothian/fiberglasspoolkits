@@ -12,5 +12,6 @@ export class ShellRange extends Entity {
   defaultAssetId:number = 0
   defaultShell:number   = 0
   defaultColour:number  = 0
-
+  //UI Props
+  isFavorite:boolean      = false
 }

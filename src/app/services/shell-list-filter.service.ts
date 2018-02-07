@@ -37,6 +37,8 @@ export class ShellListFilterService {
   private _suppliers:Array<Entity> = []
   public get suppliers():Array<Entity> { return this._suppliers }
 
+  private _entityCount_:number = 0;
+
   constructor(private rangeService: ShellRangeService) {
     this.rangeService.get().then(
       shells => {
@@ -50,6 +52,12 @@ export class ShellListFilterService {
     this._filteredRanges = this._allRanges
 
     this._allRanges.forEach(r => {
+
+      r.entityId = r.entityId ? r.entityId : this._entityCount_++ +''
+      r.shells.forEach(s=> {
+        s.entityId = s.entityId ? s.entityId : this._entityCount_++ +''
+      })
+
       // collect all suppliers from list
       if(this._suppliers.findIndex(s => s.entityId === r.supplier.entityId) < 0) { this._suppliers.push(r.supplier) }
 
@@ -78,6 +86,10 @@ export class ShellListFilterService {
       if (this._minCost >= minShellCost) { this._minCost = minShellCost }
 
     })
+  }
+
+  public get getFavorites(): Array<ShellRange> {
+    return this._filteredRanges.filter(r=>r.isFavorite)
   }
 
   public applyFilter({
