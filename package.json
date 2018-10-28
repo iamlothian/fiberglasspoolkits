@@ -31,6 +31,7 @@
     "core-js": "^2.5.3",
     "express": "^4.16.4",
     "hammerjs": "^2.0.8",
+    "merge-descriptors": "^1.0.1",
     "ng2-nouislider": "^1.7.7",
     "ngx-carousel": "^1.3.5",
     "nouislider": "^10.1.0",
