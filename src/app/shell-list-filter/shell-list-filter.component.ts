@@ -90,7 +90,7 @@ export class ShellListFilterComponent implements OnInit {
   async ngOnInit() {
   }
 
-  selectSupplier(supplier:Entity) {
+  selectSupplier(supplier:Entity = undefined) {
     this.supplier = supplier
   }
 
